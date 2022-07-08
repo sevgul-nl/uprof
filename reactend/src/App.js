@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+function App1() {
   return (
     <div className="App">
       <header className="App-header">
@@ -10,5 +10,11 @@ function App() {
     </div>
   );
 }
+
+const App = () => (
+  <div>
+    <h2>Baki was here !..</h2>
+  </div>
+);
 
 export default App;

@@ -1,0 +1,23 @@
+.signinFormRow {
+    font-family: "Open Sans";
+}
+
+.signinFormHeader {
+    font-size: 18px;
+    font-family: "Open Sans";
+    padding-bottom: 30px;
+}
+
+.signinFormButton {
+    padding-top: 30px;
+}
+
+.signinFormContent {
+    display: flex;
+    text-align: center;
+}
+
+.errorMessage {
+    font-family: "Open Sans";
+    color: red;
+}

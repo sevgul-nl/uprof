@@ -9,12 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 //@ApiPrefixController
 public class HomeController {
 
-	@RequestMapping(value = "/test")
+	@GetMapping("/")
 	public String index() {
-		return "index.html";
+		return "index";
 	}
 
-	@GetMapping("/")
+	@GetMapping("/model")
     public ModelAndView home() {
         ModelAndView mav=new ModelAndView("index");
         return mav;

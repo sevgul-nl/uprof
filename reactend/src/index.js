@@ -1,17 +1,44 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { render } from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+//import { Router, Route, hashHistory } from 'react-router';
+//import { createLogger } from 'redux-logger';
+//import thunkMiddleware from 'redux-thunk';
+//import promiseMiddleware from 'redux-promise-middleware';
+import reducer from './reducers';
+//import { fetchContainerId } from './actions';
+import App from './containers/App';
+//import getMuiTheme from '@mui/material/styles/getMuiTheme';
+//import MuiThemeProvider from '@mui/material/styles/MuiThemeProvider';
+//import CheckoutContainer from './containers/CheckoutContainer';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+//const middleware = [
+//  thunkMiddleware,
+//  promiseMiddleware({
+//    promiseTypeSuffixes: ['REQ', 'ACK', 'ERR'],
+//  }),
+//];
+
+//if (process.env.NODE_ENV !== 'production') {
+//middleware.push(createLogger());
+//}
+
+//const store = createStore(reducer, applyMiddleware(...middleware));
+const store = createStore(reducer);
+
+//const muiTheme = getMuiTheme({
+//  textField: {
+//    focusColor: '#9fa5a8',
+//  },
+//});
+
+//store.dispatch(fetchAllDummyItems());
+//store.dispatch(fetchContainerId());
+
+render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
