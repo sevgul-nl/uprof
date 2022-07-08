@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
+import 'bootstrap/dist/css/bootstrap.css';
 import { Provider } from 'react-redux';
 //import { Router, Route, hashHistory } from 'react-router';
 //import { createLogger } from 'redux-logger';

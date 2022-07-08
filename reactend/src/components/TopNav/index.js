@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 //import { Provider } from 'react-redux';
 //import { createStore, applyMiddleware } from 'redux';
 
@@ -142,13 +142,16 @@ class TopNav extends Component {
           labelStyle={labelStyles}
           onClick={this.toggleCreateModal}
           label="Create User"
-        />
+        >
+          Create User
+        </Button>
         <Button
           style={styles}
           labelStyle={labelStyles}
           onClick={this.toggleLoginModal}
-          label="Sign in"
-        />
+        >
+          Sign in
+        </Button>
       </div>
     );
   }
@@ -162,16 +165,17 @@ class TopNav extends Component {
       fontFamily: 'Open Sans',
       fontWeight: 600,
     };
-    const welcome = 'Welcome!';
+
     return (
       <div>
-        <span className="welcomeMessage">{welcome}</span>
         <Button
+          variant=""
           style={styles}
           labelStyle={labelStyles}
           onClick={this.removeToken}
-          label="Sign out"
-        />
+        >
+          Sign out
+        </Button>
       </div>
     );
   }
@@ -192,7 +196,7 @@ class TopNav extends Component {
         <div className="navHeader">
           <div className="navUser">
             <div className="buttonSection">
-              {this.state.authenticated
+              {this.state.authenticated === true
                 ? this.renderAuthenticated()
                 : this.renderUnauthenticated()}
             </div>

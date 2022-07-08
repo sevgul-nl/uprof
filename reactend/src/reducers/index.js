@@ -10,24 +10,10 @@ export default combineReducers({
 });
 
 // TODO: rename selectors?
-export const isActive = (state) => fromUser.isActive(state.customer);
-export const getIP = (state) => {
-  return state.container.ip;
-};
-export const getHost = (state) => {
-  return state.container.host;
-};
+export const isActive = (state) => fromUser.isActive(state.user);
 export const getUserId = (state) => {
-  return state.customer.customerId;
+  return state.user.userId;
 };
 export const getUsername = (state) => {
-  return state.customer.username;
-};
-
-export const getQuantityById = (state) => {
-  return state.cart.quantityById;
-};
-
-export const itemJustAddedSelector = (state) => {
-  return state.cart.itemJustAdded;
+  return state.user.username;
 };
