@@ -200,6 +200,7 @@ class TopNav extends Component {
                 ? this.renderAuthenticated()
                 : this.renderUnauthenticated()}
             </div>
+
             {this.renderCreateModal()}
             {this.renderLoginModal()}
           </div>
