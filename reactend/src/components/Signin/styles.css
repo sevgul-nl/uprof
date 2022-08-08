@@ -1,0 +1,147 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --border-color: rgb(209, 207, 207);
+}
+
+.navs {
+    padding: 1em 0px;
+    border-bottom: 1px solid rgb(189, 186, 186);
+}
+
+.navs button {
+    margin-right: 1em;
+}
+
+.navs .logo {
+    font-size: 1.5em;
+    ;
+}
+
+.about {
+    margin: 3em 2em;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.about h4,
+.about p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.item {
+    border: .1em solid --border-color;
+    padding: .5em;
+    box-shadow: -1px 7px 5px 0px rgba(163, 157, 157, 0.75);
+    -webkit-box-shadow: -1px 7px 5px 0px rgba(163, 157, 157, 0.75);
+    -moz-box-shadow: -1px 7px 5px 0px rgba(163, 157, 157, 0.75);
+    border-radius: .5em;
+
+}
+
+.item:hover {
+    border: .2em solid blue;
+    border-radius: .5em;
+
+}
+
+.item span.best-seller {
+    position: relative;
+    top: 0em;
+    right: 0em;
+    background-color: red;
+    ;
+}
+
+.item img {
+    border: .1em solid border-color;
+}
+
+.hot-sales {
+    background-color: rgb(190, 10, 10);
+    color: white;
+    border-top-left-radius: 1em;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+}
+
+.product-catalog {
+    margin-top: 3em;
+    ;
+}
+
+.admin-nav {
+    padding: 1em 0em;
+}
+
+.admin-nav .menu {
+    margin-right: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.admin button {
+    height: 1.5em;
+    ;
+    padding: .01em 1em .1em 1em !important
+}
+
+.close {
+    background: none;
+    font-weight: bolder;
+    border: 0px;
+}
+
+.contact-info {
+    border: 1px solid var(--border-color);
+    padding: .5em;
+}
+
+.info-items {
+    border: 1px solid var(--border-color);
+    padding: .5em;
+    position: relative;
+}
+
+.remove {
+    background: red;
+    color: white;
+    padding: 0em;
+    font-weight: bolder;
+    font-size: 24px;
+    border: 0px;
+    border-top-right-radius: 1px;
+    font-size: 1em;
+    position: absolute;
+    right: 0px;
+    top: 0em;
+}
+
+.head {
+    margin: 0px;
+}
+
+.sub-heading {
+    font-size: 12px;
+    color: rgb(170, 165, 165);
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1em;
+    top: .3em;
+
+}
+
+.form-check-label {
+    font-size: 14px;
+}
