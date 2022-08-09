@@ -145,3 +145,7 @@ a {
 .form-check-label {
     font-size: 14px;
 }
+
+.o_txt {
+    flex: 1;
+}

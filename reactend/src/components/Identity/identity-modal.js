@@ -7,6 +7,7 @@ import Wizard from './wizard';
 import Modal from './modal';
 import Styles from './styles';
 import { createUser, loginUser } from '../../actions';
+import './styles.css';
 
 //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -42,25 +43,6 @@ const Error = ({ name }) => (
 const required = (value) => (value ? undefined : 'Required');
 
 const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal }) => {
-  const genderRange = [
-    {
-      value: 0,
-      label: '0°C',
-    },
-    {
-      value: 20,
-      label: '20°C',
-    },
-    {
-      value: 37,
-      label: '37°C',
-    },
-    {
-      value: 100,
-      label: '100°C',
-    },
-  ];
-
   const handleSubmit = (values) => {
     onSubmit(values);
   };
@@ -120,14 +102,18 @@ const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal }) => {
               />
               <Error name="email" />
             </div>
-            <div>
+            <div className="d-flex align-items-center">
               <label>Gender</label>
+            </div>
+            <div>
+              <label>Female</label>
               <Field
                 name="gender"
                 component="input"
                 type="range"
-                marks={genderRange}
+                value="50"
               ></Field>
+              <label>Man</label>
               <Error name="gender" />
             </div>
           </Wizard.Page>
@@ -143,6 +129,28 @@ const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal }) => {
               </Field>
               <Error name="city" />
             </div>
+            <div>
+              <label>Politics</label>
+
+              <Field name="politics" component="select">
+                <option value="Democracy">Democracy</option>
+                <option value="Conservative">Conservative</option>
+                <option value="Environmentalism">Environmentalism</option>
+                <option value="Nationalism">Nationalism</option>
+                <option value="Liberalism">Liberalism</option>
+              </Field>
+              <Error name="politcs" />
+            </div>
+            <div>
+              <label>Democrat</label>
+              <Field
+                name="politics"
+                component="input"
+                type="range"
+                value="50"
+              ></Field>
+              <label>Radical</label>
+            </div>
           </Wizard.Page>
         </Wizard>
       </Modal>
@@ -157,9 +165,11 @@ IdentiyModal.propTypes = {
   loginUser: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({});
+//const mapStateToProps = (state) => ({});
 
 //export default IdentiyModal;
-export default connect(mapStateToProps, { createUser, loginUser })(
-  IdentiyModal
-);
+//export default connect(mapStateToProps, { createUser, loginUser })(
+//  IdentiyModal
+//);
+
+export default IdentiyModal;
