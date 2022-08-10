@@ -3,6 +3,7 @@ import { USER, PRODUCTS } from './data-types';
 export const STATE_START_EDITING = 'state_start_editing';
 export const STATE_END_EDITING = 'state_end_editing';
 export const STATE_START_CREATING = 'state_start_creating';
+export const STATE_START_LOGIN = 'state_start_login';
 
 export const startEditingProduct = (product) => ({
   type: STATE_START_EDITING,
@@ -27,5 +28,10 @@ export const startCreatingProduct = () => ({
 
 export const startCreatingUser = () => ({
   type: STATE_START_CREATING,
+  dataType: USER,
+});
+
+export const startLoginUser = () => ({
+  type: STATE_START_LOGIN,
   dataType: USER,
 });

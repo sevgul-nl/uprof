@@ -21,7 +21,7 @@ export const fetchAllUsers = () => (dispatch) => {
   return dispatch(dispatchObj);
 };
 
-export const createUser = (username, password) => (dispatch) => {
+export const createUser = (user) => (dispatch) => {
   const url = `${API}/signup/`;
   let dispatchObj = {
     type: types.CREATE_USER,
@@ -30,7 +30,7 @@ export const createUser = (username, password) => (dispatch) => {
         .post(url)
         .set('Content-Type', 'application/json')
         .accept('application/json')
-        .send({ username: username, password: password })
+        .send({ user })
         .end()
         .then((res) => res.body),
     },

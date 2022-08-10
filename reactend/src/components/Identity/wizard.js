@@ -44,7 +44,8 @@ export default class Wizard extends React.Component {
     const { page } = this.state;
     const isLastPage = page === React.Children.count(children) - 1;
     if (isLastPage) {
-      return onSubmit(values);
+      const user = { ...values };
+      return onSubmit(user, this.props);
     } else {
       this.next(values);
     }

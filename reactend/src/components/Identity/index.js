@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import IdentityModal from './identity-modal';
 
 import './styles.css';
-import { startCreatingUser } from '../../store/state-actions';
+import { startCreatingUser, startLoginUser } from '../../store/state-actions';
 
 const styles = {
   color: '#fff',
@@ -23,7 +23,8 @@ const mapStateToProps = (storeData) => ({
 });
 
 const mapDispatchToProps = {
-  createProduct: startCreatingUser,
+  createUser: startCreatingUser,
+  loginUser: startLoginUser,
 };
 
 const connectFunction = connect(mapStateToProps, mapDispatchToProps);
@@ -68,6 +69,8 @@ export const Identity = connectFunction(
             <IdentityModal
               openIdentityModal={this.state.openIdentityModal}
               setOpenIdentityModal={() => this.setOpenIdentityModal(false)}
+              props={this.props}
+              user={this.props.user}
             />
           )}
           <Button

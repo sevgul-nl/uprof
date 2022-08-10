@@ -1,12 +1,12 @@
 import React from 'react';
 //import ReactDom from 'react-dom';
 const MODAL_STYLES = {
-  position: 'absolute',
+  position: 'center',
   backgroundColor: 'rgb(165, 189, 238)',
   padding: '15px',
   zIndex: '1001',
   width: '100%',
-  borderRadius: '.5em',
+  //borderRadius: '.5em',
 };
 const OVERLAY_STYLE = {
   position: 'fixed',

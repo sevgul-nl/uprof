@@ -6,20 +6,21 @@ import { PropTypes } from 'prop-types';
 import Wizard from './wizard';
 import Modal from './modal';
 import Styles from './styles';
-import { createUser, loginUser } from '../../actions';
+//import { createUser, loginUser } from '../../actions';
+import { createUser } from '../../actions';
 import './styles.css';
 
 //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const onSubmit = async (values) => {
+const onSubmit = async (user) => {
   //await sleep(300);
   //window.alert(JSON.stringify(values, 0, 2));
-  const { username, password } = values;
+  const { username } = user;
   if (typeof username !== 'undefined') {
-    const { createUser } = this.props;
-    return createUser(username, password)
+    //const { createUser } = props;
+    return createUser(user)
       .then((response) => {
-        this.handleCreateUserSuccess(username, password);
+        this.handleCreateUserSuccess(user);
       })
       .catch((error) => {
         this.setState({
@@ -42,9 +43,9 @@ const Error = ({ name }) => (
 
 const required = (value) => (value ? undefined : 'Required');
 
-const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal }) => {
-  const handleSubmit = (values) => {
-    onSubmit(values);
+const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal, user }) => {
+  const handleSubmit = (user) => {
+    onSubmit(user);
   };
 
   return (
@@ -132,14 +133,14 @@ const IdentiyModal = ({ openIdentityModal, setOpenIdentityModal }) => {
             <div>
               <label>Politics</label>
 
-              <Field name="politics" component="select">
+              <Field name="ideology" component="select">
                 <option value="Democracy">Democracy</option>
                 <option value="Conservative">Conservative</option>
                 <option value="Environmentalism">Environmentalism</option>
                 <option value="Nationalism">Nationalism</option>
                 <option value="Liberalism">Liberalism</option>
               </Field>
-              <Error name="politcs" />
+              <Error name="ideology" />
             </div>
             <div>
               <label>Democrat</label>
